@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct Living_DexApp: App {
-    private let dexProvider = DexViewProvider(
+    private var dexProvider = DexViewProvider(
         pokemon: DemoPokémonProvider(),
         thumbnailProvider: DemoThumbnailProvider()
     )

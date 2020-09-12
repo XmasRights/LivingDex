@@ -34,7 +34,30 @@ struct DexCell: View {
                 Text(entry.pokemon.name)
                     .font(.title)
             }
+
+            Spacer()
+
+            checkmark
+                .font(.largeTitle)
         }
+        .padding()
+        .onTapGesture(perform: toggleCaught)
+    }
+
+    var checkmark: some View {
+        switch entry.caught {
+        case true:
+            return Image(systemName: "checkmark.circle")
+                .foregroundColor(.green)
+
+        case false:
+            return Image(systemName: "circle")
+                .foregroundColor(.gray)
+        }
+    }
+
+    func toggleCaught() {
+        self.entry.caught.toggle()
     }
 }
 
