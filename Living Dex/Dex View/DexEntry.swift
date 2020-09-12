@@ -7,13 +7,29 @@
 
 import SwiftUI
 
-struct DexEntry: Identifiable {
+class DexEntry: ObservableObject, Identifiable {
     let pokemon: Pokémon
     let image: Image
-    let caught: Bool
+    @Published var caught: Bool = false
 
     var id: Int {
-        // TODO include variant forms
         pokemon.nationalDexNumber
+    }
+
+    init(pokemon: Pokémon, image: Image) {
+        self.pokemon = pokemon
+        self.image = image
+    }
+}
+
+class DexViewProvider: ObservableObject {
+    @Published var allEntries: [DexEntry]
+
+    init(pokemon: PokémonProvider,
+         thumbnailProvider: ThumbnailProvider) {
+        self.allEntries = pokemon.all.map {
+            let image = thumbnailProvider.thumbnail(for: $0)
+            return DexEntry(pokemon: $0, image: image)
+        }
     }
 }

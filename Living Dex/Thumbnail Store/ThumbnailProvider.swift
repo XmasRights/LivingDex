@@ -8,6 +8,5 @@
 import SwiftUI
 
 protocol ThumbnailProvider {
-    associatedtype Thumbnail: View
-    func thumbnail(for pokémon: Pokémon) -> Thumbnail
+    func thumbnail(for pokémon: Pokémon) -> Image
 }

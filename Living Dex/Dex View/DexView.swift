@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct DexView: View {
-    let entries: [DexEntry]
+    let provider: DexViewProvider
 
     var body: some View {
         List {
-            ForEach(entries) { entry in
+            ForEach(provider.allEntries) { entry in
                 DexCell(entry: entry)
             }
         }
@@ -20,7 +20,7 @@ struct DexView: View {
 }
 
 struct DexCell: View {
-    let entry: DexEntry
+    @ObservedObject var entry: DexEntry
 
     var body: some View {
         HStack(spacing: 16) {
@@ -39,20 +39,7 @@ struct DexCell: View {
 }
 
 struct DexView_Previews: PreviewProvider {
-    static var entries: [DexEntry] {
-        let pokemon = DemoPokémonProvider().all
-        let thumbnailProvider = DemoThumbnailProvider()
-
-        return pokemon.map {
-            let image = thumbnailProvider.thumbnail(for: $0)
-            return DexEntry(pokemon: $0, image: image, caught: false)
-        }
-    }
-
     static var previews: some View {
-        NavigationView {
-            DexView(entries: entries)
-                .navigationTitle("Living Dex")
-        }
+        Text("Hello World")
     }
 }

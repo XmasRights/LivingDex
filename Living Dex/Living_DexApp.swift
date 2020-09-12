@@ -9,24 +9,15 @@ import SwiftUI
 
 @main
 struct Living_DexApp: App {
-    private let pokemonProvider = DemoPokémonProvider()
-    private let thumbnailProvider = DemoThumbnailProvider()
-
-    private var dexEntries: [DexEntry] {
-        self.pokemonProvider.all.map {
-            let image = thumbnailProvider.thumbnail(for: $0)
-            return DexEntry(
-                pokemon: $0,
-                image: image,
-                caught: false
-            )
-        }
-    }
+    private let dexProvider = DexViewProvider(
+        pokemon: DemoPokémonProvider(),
+        thumbnailProvider: DemoThumbnailProvider()
+    )
 
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                DexView(entries: dexEntries)
+                DexView(provider: dexProvider)
             }
             .navigationTitle("Living Dex")
         }
