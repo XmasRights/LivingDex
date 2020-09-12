@@ -9,9 +9,22 @@ import SwiftUI
 
 @main
 struct Living_DexApp: App {
+    var pokemonProvider: some PokémonProvider {
+        DemoPokémonProvider()
+    }
+
+    var dexEntries: [DexEntry] {
+        self.pokemonProvider.all.map {
+            DexEntry(pokemon: $0, caught: false)
+        }
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                DexView(entries: dexEntries)
+                    .navigationTitle("Living Dex")
+            }
         }
     }
 }

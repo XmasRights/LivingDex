@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct DexView: View {
+    let entries: [DexEntry]
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(entries) { entry in
+                Text("\(entry.pokemon.nationalDexNumber) - \(entry.pokemon.name)")
+            }
+        }
     }
 }
 
 struct DexView_Previews: PreviewProvider {
     static var previews: some View {
-        DexView()
+        NavigationView {
+            DexView(entries: .demo)
+                .navigationTitle("Living Dex")
+        }
     }
 }

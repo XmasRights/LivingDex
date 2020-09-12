@@ -16,6 +16,7 @@
 		4B93CB29250D84ED007A162C /* DemoPokemonProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93CB28250D84ED007A162C /* DemoPokemonProvider.swift */; };
 		4B93CB2E250D85B2007A162C /* DexEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93CB2D250D85B2007A162C /* DexEntry.swift */; };
 		4B93CB30250D8610007A162C /* DexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93CB2F250D8610007A162C /* DexView.swift */; };
+		4B93CB32250D8699007A162C /* DemoDexEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93CB31250D8699007A162C /* DemoDexEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4B93CB28250D84ED007A162C /* DemoPokemonProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPokemonProvider.swift; sourceTree = "<group>"; };
 		4B93CB2D250D85B2007A162C /* DexEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexEntry.swift; sourceTree = "<group>"; };
 		4B93CB2F250D8610007A162C /* DexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DexView.swift; sourceTree = "<group>"; };
+		4B93CB31250D8699007A162C /* DemoDexEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoDexEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				4B93CB2D250D85B2007A162C /* DexEntry.swift */,
 				4B93CB2F250D8610007A162C /* DexView.swift */,
+				4B93CB31250D8699007A162C /* DemoDexEntry.swift */,
 			);
 			path = "Dex View";
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				4B93CB29250D84ED007A162C /* DemoPokemonProvider.swift in Sources */,
 				4B93CB30250D8610007A162C /* DexView.swift in Sources */,
 				4B47370A250D83C1001BB7D8 /* ContentView.swift in Sources */,
+				4B93CB32250D8699007A162C /* DemoDexEntry.swift in Sources */,
 				4B473708250D83C1001BB7D8 /* Living_DexApp.swift in Sources */,
 				4B93CB25250D8437007A162C /* Pokemon.swift in Sources */,
 			);
