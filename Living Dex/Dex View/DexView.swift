@@ -45,7 +45,7 @@ struct DexCell: View {
                 Text("\(pokemon.nationalDexNumber)")
 
                 Text(pokemon.name)
-                    .font(.title)
+                    .font(.headline)
             }
 
             Spacer()
