@@ -20,17 +20,3 @@ class DexEntry: ObservableObject, Identifiable {
         self.image = image
     }
 }
-
-class DexViewProvider: ObservableObject {
-    @Published var allEntries: [DexEntry]
-
-    init(pokemon: PokémonProvider, thumbnailProvider: ThumbnailProvider) {
-        self.allEntries = pokemon.all.map {
-            let image = thumbnailProvider.thumbnail(for: $0)
-            return DexEntry(
-                pokemon: $0,
-                image: image
-            )
-        }
-    }
-}

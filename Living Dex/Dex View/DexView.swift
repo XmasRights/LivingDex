@@ -8,43 +8,43 @@
 import SwiftUI
 
 struct DexView: View {
-    let provider: DexViewProvider
+    let allPokemon: [Pokémon]
     @ObservedObject var caughtPokemon = CaughtPokemon()
 
     var body: some View {
         List {
-            ForEach(provider.allEntries) { entry in
-                DexCell(entry: entry, caught: isCaught(entry))
+            ForEach(allPokemon) { pokemon in
+                DexCell(pokemon: pokemon, caught: isCaught(pokemon))
                     .onTapGesture(perform: {
-                        self.toggleCaught(entry)
+                        self.toggleCaught(pokemon)
                     })
             }
         }
     }
 
-    private func toggleCaught(_ entry: DexEntry) {
-        caughtPokemon.toggle(entry.pokemon)
+    private func toggleCaught(_ pokemon: Pokémon) {
+        caughtPokemon.toggle(pokemon)
     }
 
-    private func isCaught(_ entry: DexEntry) -> Bool {
-        caughtPokemon.contains(entry.pokemon)
+    private func isCaught(_ pokemon: Pokémon) -> Bool {
+        caughtPokemon.contains(pokemon)
     }
 }
 
 struct DexCell: View {
-    let entry: DexEntry
+    let pokemon: Pokémon
     let caught: Bool
 
     var body: some View {
         HStack(spacing: 16) {
-            entry.image
+            Image(pokemon: pokemon)
                 .resizable()
                 .frame(width: 60, height: 60)
 
             VStack(alignment: .leading) {
-                Text("\(entry.pokemon.nationalDexNumber)")
+                Text("\(pokemon.nationalDexNumber)")
 
-                Text(entry.pokemon.name)
+                Text(pokemon.name)
                     .font(.title)
             }
 
