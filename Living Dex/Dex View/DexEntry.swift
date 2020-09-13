@@ -10,7 +10,6 @@ import SwiftUI
 class DexEntry: ObservableObject, Identifiable {
     let pokemon: Pokémon
     let image: Image
-    @Published var caught: Bool = false
 
     var id: Int {
         pokemon.nationalDexNumber
@@ -25,11 +24,13 @@ class DexEntry: ObservableObject, Identifiable {
 class DexViewProvider: ObservableObject {
     @Published var allEntries: [DexEntry]
 
-    init(pokemon: PokémonProvider,
-         thumbnailProvider: ThumbnailProvider) {
+    init(pokemon: PokémonProvider, thumbnailProvider: ThumbnailProvider) {
         self.allEntries = pokemon.all.map {
             let image = thumbnailProvider.thumbnail(for: $0)
-            return DexEntry(pokemon: $0, image: image)
+            return DexEntry(
+                pokemon: $0,
+                image: image
+            )
         }
     }
 }

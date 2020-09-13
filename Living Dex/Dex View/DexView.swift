@@ -9,18 +9,31 @@ import SwiftUI
 
 struct DexView: View {
     let provider: DexViewProvider
+    @ObservedObject var caughtPokemon = CaughtPokemon()
 
     var body: some View {
         List {
             ForEach(provider.allEntries) { entry in
-                DexCell(entry: entry)
+                DexCell(entry: entry, caught: isCaught(entry))
+                    .onTapGesture(perform: {
+                        self.toggleCaught(entry)
+                    })
             }
         }
+    }
+
+    private func toggleCaught(_ entry: DexEntry) {
+        caughtPokemon.toggle(entry.pokemon)
+    }
+
+    private func isCaught(_ entry: DexEntry) -> Bool {
+        caughtPokemon.contains(entry.pokemon)
     }
 }
 
 struct DexCell: View {
-    @ObservedObject var entry: DexEntry
+    let entry: DexEntry
+    let caught: Bool
 
     var body: some View {
         HStack(spacing: 16) {
@@ -41,11 +54,10 @@ struct DexCell: View {
                 .font(.largeTitle)
         }
         .padding()
-        .onTapGesture(perform: toggleCaught)
     }
 
     var checkmark: some View {
-        switch entry.caught {
+        switch caught {
         case true:
             return Image(systemName: "checkmark.circle")
                 .foregroundColor(.green)
@@ -54,10 +66,6 @@ struct DexCell: View {
             return Image(systemName: "circle")
                 .foregroundColor(.gray)
         }
-    }
-
-    func toggleCaught() {
-        self.entry.caught.toggle()
     }
 }
 

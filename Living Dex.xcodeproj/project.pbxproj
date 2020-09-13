@@ -19,6 +19,7 @@
 		4B93CB35250D892F007A162C /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93CB34250D892F007A162C /* ThumbnailProvider.swift */; };
 		4B93CB37250D89AE007A162C /* DemoThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93CB36250D89AE007A162C /* DemoThumbnailProvider.swift */; };
 		4B93CB39250D89CF007A162C /* Thumbnails.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B93CB38250D89CF007A162C /* Thumbnails.xcassets */; };
+		4B93CB42250D9B5B007A162C /* CaughtPokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93CB41250D9B5B007A162C /* CaughtPokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		4B93CB34250D892F007A162C /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
 		4B93CB36250D89AE007A162C /* DemoThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoThumbnailProvider.swift; sourceTree = "<group>"; };
 		4B93CB38250D89CF007A162C /* Thumbnails.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Thumbnails.xcassets; sourceTree = "<group>"; };
+		4B93CB41250D9B5B007A162C /* CaughtPokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaughtPokemon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		4B473706250D83C1001BB7D8 /* Living Dex */ = {
 			isa = PBXGroup;
 			children = (
+				4B93CB40250D9B43007A162C /* Caught Pokemon */,
 				4B93CB33250D88C7007A162C /* Thumbnail Store */,
 				4B93CB2A250D8593007A162C /* Dex View */,
 				4B93CB23250D841C007A162C /* Pokemon Store */,
@@ -115,6 +118,14 @@
 				4B93CB38250D89CF007A162C /* Thumbnails.xcassets */,
 			);
 			path = "Thumbnail Store";
+			sourceTree = "<group>";
+		};
+		4B93CB40250D9B43007A162C /* Caught Pokemon */ = {
+			isa = PBXGroup;
+			children = (
+				4B93CB41250D9B5B007A162C /* CaughtPokemon.swift */,
+			);
+			path = "Caught Pokemon";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +205,7 @@
 				4B47370A250D83C1001BB7D8 /* ContentView.swift in Sources */,
 				4B93CB37250D89AE007A162C /* DemoThumbnailProvider.swift in Sources */,
 				4B93CB35250D892F007A162C /* ThumbnailProvider.swift in Sources */,
+				4B93CB42250D9B5B007A162C /* CaughtPokemon.swift in Sources */,
 				4B473708250D83C1001BB7D8 /* Living_DexApp.swift in Sources */,
 				4B93CB25250D8437007A162C /* Pokemon.swift in Sources */,
 			);
