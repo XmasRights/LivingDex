@@ -8,27 +8,27 @@
 import SwiftUI
 
 class CaughtPokemon: ObservableObject {
-    @Published private(set) var caught: Set<Int> {
+    @Published private(set) var caught: Set<Int>! {
         didSet {
-            Self.save(data: caught)
+            self.save(data: caught)
         }
     }
 
-    private static let key = "caught_pokemon"
-    private static var defaults: UserDefaults {
+    private let key = "caught_pokemon"
+    private var defaults: UserDefaults {
         UserDefaults.standard
     }
 
     init() {
-        self.caught = Self.load() ?? Set<Int>()
+        self.caught = self.load() ?? Set<Int>()
     }
 
-    private static func save(data: Set<Int>) {
+    private func save(data: Set<Int>) {
         let list = Array(data)
         defaults.setValue(list, forKey: key)
     }
 
-    private static func load() -> Set<Int>? {
+    private func load() -> Set<Int>? {
         guard let list = defaults.object(forKey: key) as? Array<Int> else {
             return nil
         }
