@@ -15,21 +15,36 @@ class CaughtPokemon: ObservableObject {
     }
 
     private let key = "caught_pokemon"
-    private var defaults: UserDefaults {
-        UserDefaults.standard
-    }
 
     init() {
-        self.caught = self.load() ?? Set<Int>()
+        self.caught = self.load() ?? .init()
+
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(didUpdateOniCloud(notification:)),
+            name: NSUbiquitousKeyValueStore.didChangeExternallyNotification,
+            object: NSUbiquitousKeyValueStore.default
+        )
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    @objc private func didUpdateOniCloud(notification: Notification) {
+        print("Holy flying rabbits, Batman")
+        self.caught = load() ?? .init()
     }
 
     private func save(data: Set<Int>) {
         let list = Array(data)
-        defaults.setValue(list, forKey: key)
+
+        NSUbiquitousKeyValueStore.default.set(list, forKey: key)
+        NSUbiquitousKeyValueStore.default.synchronize()
     }
 
     private func load() -> Set<Int>? {
-        guard let list = defaults.object(forKey: key) as? Array<Int> else {
+        guard let list = NSUbiquitousKeyValueStore.default.array(forKey: key) as? Array<Int> else {
             return nil
         }
         return Set<Int>(list)

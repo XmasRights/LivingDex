@@ -28,6 +28,7 @@
 		4B47370B250D83C1001BB7D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B47370E250D83C1001BB7D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B473710250D83C1001BB7D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B4FCE79250EDA2100470C54 /* Living Dex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Living Dex.entitlements"; sourceTree = "<group>"; };
 		4B93CB24250D8437007A162C /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		4B93CB26250D84A0007A162C /* PokemonProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonProvider.swift; sourceTree = "<group>"; };
 		4B93CB28250D84ED007A162C /* DemoPokemonProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPokemonProvider.swift; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		4B473706250D83C1001BB7D8 /* Living Dex */ = {
 			isa = PBXGroup;
 			children = (
+				4B4FCE79250EDA2100470C54 /* Living Dex.entitlements */,
 				4B93CB40250D9B43007A162C /* Caught Pokemon */,
 				4B93CB33250D88C7007A162C /* Thumbnails */,
 				4B93CB2A250D8593007A162C /* Dex View */,
@@ -331,6 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Living Dex/Living Dex.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Living Dex/Preview Content\"";
 				DEVELOPMENT_TEAM = LH8455G983;
@@ -353,6 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Living Dex/Living Dex.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Living Dex/Preview Content\"";
 				DEVELOPMENT_TEAM = LH8455G983;
