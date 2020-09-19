@@ -13,10 +13,7 @@ struct Living_DexApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                DexView(allPokemon: pokemonProvider.all)
-                    .navigationTitle("Living Dex")
-            }
+            DexView(allPokemon: pokemonProvider.all)
         }
     }
 }
