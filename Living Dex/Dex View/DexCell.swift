@@ -28,7 +28,7 @@ struct DexCell: View {
                 .aspectRatio(contentMode: .fit)
 
             Text(pokemon.name)
-                .font(.title)
+                .font(.body)
         }
         .padding()
         .background(background)

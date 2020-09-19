@@ -11,13 +11,17 @@ struct DexView: View {
     let allPokemon: [Pokémon]
     @ObservedObject var caughtPokemon = CaughtPokemon()
 
+    let columns: [GridItem] = [
+        .init(.adaptive(minimum: 100))
+    ]
+
+
     var body: some View {
-        List {
-            ForEach(allPokemon) { pokemon in
-                DexCell(pokemon: pokemon, caught: isCaught(pokemon))
-                    .onTapGesture(perform: {
-                        self.toggleCaught(pokemon)
-                    })
+        ScrollView {
+            LazyVGrid(columns: columns) {
+                ForEach(allPokemon) { pokemon in
+                    DexCell(pokemon: pokemon, caught: isCaught(pokemon))
+                }
             }
         }
     }
