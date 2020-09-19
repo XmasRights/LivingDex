@@ -24,7 +24,7 @@ struct DexView: View {
                         pokemon: pokemon,
                         caught: isCaught(pokemon),
                         caughtAction: { self.toggleCaught(pokemon) },
-                        inspectAction: {}
+                        inspectAction: { self.inspect(pokemon) }
                     )
                         .aspectRatio(1.0, contentMode: .fit)
                 }
@@ -43,6 +43,21 @@ struct DexView: View {
 
     private func isCaught(_ pokemon: Pokémon) -> Bool {
         caughtPokemon.contains(pokemon)
+    }
+
+    private func inspect(_ pokemon: Pokémon) {
+        UIApplication.shared.open(
+            pokemon.url,
+            options: [:],
+            completionHandler: nil
+        )
+    }
+}
+
+private extension Pokémon {
+    var url: URL {
+        let string = "https://pokemondb.net/pokedex/\(self.name.lowercased())#dex-locations"
+        return URL(string: string)!
     }
 }
 
