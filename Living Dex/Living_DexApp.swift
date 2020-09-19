@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct Living_DexApp: App {
-    let pokemonProvider = DemoPokémonProvider()
+    let pokemonProvider = FanzeyiProvider()
 
     var body: some Scene {
         WindowGroup {
