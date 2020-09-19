@@ -21,9 +21,14 @@ struct DexView: View {
             LazyVGrid(columns: columns) {
                 ForEach(allPokemon) { pokemon in
                     DexCell(pokemon: pokemon, caught: isCaught(pokemon))
+                        .aspectRatio(1.0, contentMode: .fit)
                 }
             }
         }
+        .background(
+            Color("BackgroundColor")
+                .edgesIgnoringSafeArea(.all)
+        )
     }
 
     private func toggleCaught(_ pokemon: Pokémon) {

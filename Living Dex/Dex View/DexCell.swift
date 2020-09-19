@@ -12,6 +12,38 @@ struct DexCell: View {
     let caught: Bool
 
     var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 25)
+                .fill(Color("BackgroundColor"))
+                .shadow(color: Color("Shadow1"), radius: 10, x: 10, y: 10)
+                .shadow(color: Color("Shadow2"), radius: 10, x: -5, y: -5)
+
+            contents
+        }
+    }
+}
+
+// MARK: - Custom Views
+
+private extension DexCell {
+    var contents: some View {
+        ZStack {
+            header
+
+            VStack {
+                Image(pokemon: pokemon)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+
+                Text(pokemon.name)
+                    .font(.body)
+                    .lineLimit(1)
+            }
+        }
+        .padding()
+    }
+
+    var header: some View {
         VStack {
             HStack {
                 Text("\(pokemon.nationalDexNumber)")
@@ -22,16 +54,8 @@ struct DexCell: View {
                 checkmark
                     .font(.subheadline)
             }
-
-            Image(pokemon: pokemon)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-
-            Text(pokemon.name)
-                .font(.body)
+            Spacer()
         }
-        .padding()
-        .background(background)
     }
 
     var background: Color? {
@@ -49,6 +73,8 @@ struct DexCell: View {
     }
 }
 
+// MARK: - SwiftUI Preview
+
 struct DexCell_Previews: PreviewProvider {
     private static var demoPokemon: [Pokémon] {
         DemoPokémonProvider().all
@@ -59,21 +85,25 @@ struct DexCell_Previews: PreviewProvider {
             DexCell(pokemon: demoPokemon.first!, caught: false)
                 .previewLayout(.fixed(width: 200, height: 200))
                 .preferredColorScheme(.light)
+                .padding()
                 .previewDisplayName("Dex Cell (Light)")
 
             DexCell(pokemon: demoPokemon.first!, caught: true)
                 .previewLayout(.fixed(width: 200, height: 200))
                 .preferredColorScheme(.light)
+                .padding()
                 .previewDisplayName("Dex Cell (Light, Caught)")
 
             DexCell(pokemon: demoPokemon.first!, caught: false)
                 .previewLayout(.fixed(width: 200, height: 200))
                 .preferredColorScheme(.dark)
+                .padding()
                 .previewDisplayName("Dex Cell (Dark)")
 
             DexCell(pokemon: demoPokemon.first!, caught: true)
                 .previewLayout(.fixed(width: 200, height: 200))
                 .preferredColorScheme(.dark)
+                .padding()
                 .previewDisplayName("Dex Cell (Dark, Caught)")
         }
     }
