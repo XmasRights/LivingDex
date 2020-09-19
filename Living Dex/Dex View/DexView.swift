@@ -20,7 +20,12 @@ struct DexView: View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(allPokemon) { pokemon in
-                    DexCell(pokemon: pokemon, caught: isCaught(pokemon))
+                    DexCell(
+                        pokemon: pokemon,
+                        caught: isCaught(pokemon),
+                        caughtAction: { self.toggleCaught(pokemon) },
+                        inspectAction: {}
+                    )
                         .aspectRatio(1.0, contentMode: .fit)
                 }
             }

@@ -10,6 +10,8 @@ import SwiftUI
 struct DexCell: View {
     let pokemon: Pokémon
     let caught: Bool
+    let caughtAction: () -> Void
+    let inspectAction: (() -> Void)
 
     var body: some View {
         ZStack {
@@ -19,7 +21,20 @@ struct DexCell: View {
                 .shadow(color: Color("Shadow2"), radius: 10, x: -5, y: -5)
 
             contents
+                .onTapGesture(perform: caughtAction)
+                .onLongPressGesture(perform: inspectAction)
         }
+    }
+}
+
+extension DexCell {
+    init(pokemon: Pokémon, caught: Bool) {
+        self.init(
+            pokemon: pokemon,
+            caught: caught,
+            caughtAction: {},
+            inspectAction: {}
+        )
     }
 }
 
@@ -53,6 +68,7 @@ private extension DexCell {
 
                 checkmark
                     .font(.subheadline)
+                    .contentShape(Rectangle())
             }
             Spacer()
         }
