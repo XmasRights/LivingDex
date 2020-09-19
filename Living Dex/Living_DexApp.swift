@@ -9,11 +9,25 @@ import SwiftUI
 
 @main
 struct Living_DexApp: App {
+    let title = "Living Dex"
     let pokemonProvider = FanzeyiProvider()
+    @ObservedObject var caughtPokemon = CaughtPokemon()
+    
+    var caughtCount: Int {
+        caughtPokemon.caught.count
+    }
 
     var body: some Scene {
         WindowGroup {
-            DexView(allPokemon: pokemonProvider.all)
+            VStack(spacing: 12) {
+                Header(title: title, caught: caughtCount)
+
+                DexView(
+                    allPokemon: pokemonProvider.all,
+                    caughtPokemon: caughtPokemon
+                )
+            }
+            .background(Color("BackgroundColor"))
         }
     }
 }

@@ -10,6 +10,8 @@
 		4B473708250D83C1001BB7D8 /* Living_DexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B473707250D83C1001BB7D8 /* Living_DexApp.swift */; };
 		4B47370C250D83C1001BB7D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B47370B250D83C1001BB7D8 /* Assets.xcassets */; };
 		4B47370F250D83C1001BB7D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B47370E250D83C1001BB7D8 /* Preview Assets.xcassets */; };
+		4B6D3E6D2516B615001B17A3 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6D3E6C2516B615001B17A3 /* Header.swift */; };
+		4B6D3E712516B85D001B17A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6D3E702516B85D001B17A3 /* ContentView.swift */; };
 		4B93CB25250D8437007A162C /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93CB24250D8437007A162C /* Pokemon.swift */; };
 		4B93CB27250D84A0007A162C /* PokemonProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93CB26250D84A0007A162C /* PokemonProvider.swift */; };
 		4B93CB29250D84ED007A162C /* DemoPokemonProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93CB28250D84ED007A162C /* DemoPokemonProvider.swift */; };
@@ -30,6 +32,8 @@
 		4B47370E250D83C1001BB7D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B473710250D83C1001BB7D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B4FCE79250EDA2100470C54 /* Living Dex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Living Dex.entitlements"; sourceTree = "<group>"; };
+		4B6D3E6C2516B615001B17A3 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		4B6D3E702516B85D001B17A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4B93CB24250D8437007A162C /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		4B93CB26250D84A0007A162C /* PokemonProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonProvider.swift; sourceTree = "<group>"; };
 		4B93CB28250D84ED007A162C /* DemoPokemonProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPokemonProvider.swift; sourceTree = "<group>"; };
@@ -73,12 +77,14 @@
 		4B473706250D83C1001BB7D8 /* Living Dex */ = {
 			isa = PBXGroup;
 			children = (
+				4B6D3E6B2516B605001B17A3 /* Header */,
 				4B6D3E662516B584001B17A3 /* Pokemon */,
 				4B4FCE79250EDA2100470C54 /* Living Dex.entitlements */,
 				4B93CB40250D9B43007A162C /* Caught Pokemon */,
 				4B93CB33250D88C7007A162C /* Thumbnails */,
 				4B93CB2A250D8593007A162C /* Dex View */,
 				4B473707250D83C1001BB7D8 /* Living_DexApp.swift */,
+				4B6D3E702516B85D001B17A3 /* ContentView.swift */,
 				4B47370B250D83C1001BB7D8 /* Assets.xcassets */,
 				4B473710250D83C1001BB7D8 /* Info.plist */,
 				4B47370D250D83C1001BB7D8 /* Preview Content */,
@@ -101,6 +107,14 @@
 				4B93CB23250D841C007A162C /* Model */,
 			);
 			path = Pokemon;
+			sourceTree = "<group>";
+		};
+		4B6D3E6B2516B605001B17A3 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				4B6D3E6C2516B615001B17A3 /* Header.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		4B93CB23250D841C007A162C /* Model */ = {
@@ -222,9 +236,11 @@
 			files = (
 				4B93CB27250D84A0007A162C /* PokemonProvider.swift in Sources */,
 				4B93CB2E250D85B2007A162C /* DexEntry.swift in Sources */,
+				4B6D3E712516B85D001B17A3 /* ContentView.swift in Sources */,
 				4B93CB29250D84ED007A162C /* DemoPokemonProvider.swift in Sources */,
 				4B93CB30250D8610007A162C /* DexView.swift in Sources */,
 				4B93CB42250D9B5B007A162C /* CaughtPokemon.swift in Sources */,
+				4B6D3E6D2516B615001B17A3 /* Header.swift in Sources */,
 				4B473708250D83C1001BB7D8 /* Living_DexApp.swift in Sources */,
 				4B93CB25250D8437007A162C /* Pokemon.swift in Sources */,
 				4B93CB44250DA46B007A162C /* Thumbnail.swift in Sources */,

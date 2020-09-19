@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DexView: View {
     let allPokemon: [Pokémon]
-    @ObservedObject var caughtPokemon = CaughtPokemon()
+    var caughtPokemon: CaughtPokemon
 
     let columns: [GridItem] = [
         .init(.adaptive(minimum: 100))
@@ -29,6 +29,7 @@ struct DexView: View {
                         .aspectRatio(1.0, contentMode: .fit)
                 }
             }
+            .padding()
         }
         .background(
             Color("BackgroundColor")
@@ -51,6 +52,6 @@ struct DexView_Previews: PreviewProvider {
     }
 
     static var previews: some View {
-        DexView(allPokemon: demoPokemon)
+        DexView(allPokemon: demoPokemon, caughtPokemon: CaughtPokemon())
     }
 }
