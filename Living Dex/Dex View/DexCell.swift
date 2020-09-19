@@ -23,6 +23,10 @@ struct DexCell: View {
             contents
                 .onTapGesture(perform: caughtAction)
                 .onLongPressGesture(perform: inspectAction)
+
+            RoundedRectangle(cornerRadius: 25)
+                .stroke(borderColor, lineWidth: 4)
+
         }
     }
 }
@@ -74,11 +78,8 @@ private extension DexCell {
         }
     }
 
-    var background: Color? {
-        guard caught else {
-            return nil
-        }
-        return Color.green
+    var borderColor: Color {
+        caught ? .green : .clear
     }
 
     var checkmark: Image? {
