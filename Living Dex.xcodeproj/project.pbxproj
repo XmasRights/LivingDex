@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B297098255716070042EBCB /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B297097255716070042EBCB /* Footer.swift */; };
 		4B473708250D83C1001BB7D8 /* Living_DexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B473707250D83C1001BB7D8 /* Living_DexApp.swift */; };
 		4B47370C250D83C1001BB7D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B47370B250D83C1001BB7D8 /* Assets.xcassets */; };
 		4B47370F250D83C1001BB7D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B47370E250D83C1001BB7D8 /* Preview Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B297097255716070042EBCB /* Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		4B473704250D83C1001BB7D8 /* Living Dex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Living Dex.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B473707250D83C1001BB7D8 /* Living_DexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Living_DexApp.swift; sourceTree = "<group>"; };
 		4B47370B250D83C1001BB7D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				4B6D3E6C2516B615001B17A3 /* Header.swift */,
+				4B297097255716070042EBCB /* Footer.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				4B93CB27250D84A0007A162C /* PokemonProvider.swift in Sources */,
 				4B93CB2E250D85B2007A162C /* DexEntry.swift in Sources */,
 				4B6D3E712516B85D001B17A3 /* ContentView.swift in Sources */,
+				4B297098255716070042EBCB /* Footer.swift in Sources */,
 				4B93CB29250D84ED007A162C /* DemoPokemonProvider.swift in Sources */,
 				4B93CB30250D8610007A162C /* DexView.swift in Sources */,
 				4B93CB42250D9B5B007A162C /* CaughtPokemon.swift in Sources */,

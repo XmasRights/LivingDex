@@ -11,6 +11,7 @@ import SwiftUI
 struct Living_DexApp: App {
     let title = "Living Dex"
     let pokemonProvider = FanzeyiProvider()
+
     @ObservedObject var caughtPokemon = CaughtPokemon()
     
     var caughtCount: Int {
@@ -26,6 +27,8 @@ struct Living_DexApp: App {
                     allPokemon: pokemonProvider.all,
                     caughtPokemon: caughtPokemon
                 )
+
+                Footer()
             }
             .background(Color("BackgroundColor"))
         }
