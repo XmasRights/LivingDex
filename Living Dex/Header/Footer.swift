@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct Footer: View {
+    @Binding var caughtFilter: CaughtFilter
+
     var body: some View {
         VStack {
             Divider()
 
             HStack {
                 Menu {
-                    Text("Menu Item 1")
-                    Text("Menu Item 2")
-                    Text("Menu Item 3")
+                    Picker("Caught Filter", selection: $caughtFilter) {
+                        Text("Caught Only").tag(CaughtFilter.caught)
+                        Text("Uncaught Only").tag(CaughtFilter.uncaught)
+                        Text("All").tag(CaughtFilter.all)
+                    }
                 } label: {
                     Label("Filter", systemImage: "line.horizontal.3.decrease.circle.fill")
                 }
@@ -29,13 +33,15 @@ struct Footer: View {
 }
 
 struct Footer_Previews: PreviewProvider {
+    @State static var caughtFilter = CaughtFilter.all
+
     static var previews: some View {
         Group {
-            Footer()
+            Footer(caughtFilter: $caughtFilter)
                 .preferredColorScheme(.light)
                 .previewLayout(.sizeThatFits)
 
-            Footer()
+            Footer(caughtFilter: $caughtFilter)
                 .preferredColorScheme(.dark)
                 .previewLayout(.sizeThatFits)
         }

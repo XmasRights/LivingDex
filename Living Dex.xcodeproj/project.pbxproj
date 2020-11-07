@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B297098255716070042EBCB /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B297097255716070042EBCB /* Footer.swift */; };
+		4B2970A1255722790042EBCB /* CaughtFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2970A0255722790042EBCB /* CaughtFilter.swift */; };
 		4B473708250D83C1001BB7D8 /* Living_DexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B473707250D83C1001BB7D8 /* Living_DexApp.swift */; };
 		4B47370C250D83C1001BB7D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B47370B250D83C1001BB7D8 /* Assets.xcassets */; };
 		4B47370F250D83C1001BB7D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B47370E250D83C1001BB7D8 /* Preview Assets.xcassets */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		4B297097255716070042EBCB /* Footer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
+		4B2970A0255722790042EBCB /* CaughtFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaughtFilter.swift; sourceTree = "<group>"; };
 		4B473704250D83C1001BB7D8 /* Living Dex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Living Dex.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B473707250D83C1001BB7D8 /* Living_DexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Living_DexApp.swift; sourceTree = "<group>"; };
 		4B47370B250D83C1001BB7D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				4B93CB41250D9B5B007A162C /* CaughtPokemon.swift */,
+				4B2970A0255722790042EBCB /* CaughtFilter.swift */,
 			);
 			path = "Caught Pokemon";
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				4B93CB42250D9B5B007A162C /* CaughtPokemon.swift in Sources */,
 				4B6D3E6D2516B615001B17A3 /* Header.swift in Sources */,
 				4B473708250D83C1001BB7D8 /* Living_DexApp.swift in Sources */,
+				4B2970A1255722790042EBCB /* CaughtFilter.swift in Sources */,
 				4B93CB25250D8437007A162C /* Pokemon.swift in Sources */,
 				4B93CB44250DA46B007A162C /* Thumbnail.swift in Sources */,
 				4BBF0190251673C30029AF93 /* DexCell.swift in Sources */,

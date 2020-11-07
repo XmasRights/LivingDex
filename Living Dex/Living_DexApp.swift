@@ -13,7 +13,8 @@ struct Living_DexApp: App {
     let pokemonProvider = FanzeyiProvider()
 
     @ObservedObject var caughtPokemon = CaughtPokemon()
-    
+    @ObservedObject var caughtFilter = SelectedCaughtFilter()
+
     var caughtCount: Int {
         caughtPokemon.caught.count
     }
@@ -25,10 +26,11 @@ struct Living_DexApp: App {
 
                 DexView(
                     allPokemon: pokemonProvider.all,
-                    caughtPokemon: caughtPokemon
+                    caughtPokemon: caughtPokemon,
+                    caughtSelectionFilter: caughtFilter.current
                 )
 
-                Footer()
+                Footer(caughtFilter: $caughtFilter.current)
             }
             .background(Color("BackgroundColor"))
         }

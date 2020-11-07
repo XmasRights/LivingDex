@@ -10,16 +10,21 @@ import SwiftUI
 struct DexView: View {
     let allPokemon: [Pokémon]
     var caughtPokemon: CaughtPokemon
+    let caughtSelectionFilter: CaughtFilter
 
     let columns: [GridItem] = [
         .init(.adaptive(minimum: 100))
     ]
 
+    private var pokemonToShow: [Pokémon] {
+        let filter = caughtSelectionFilter.filter(caught: caughtPokemon)
+        return allPokemon.filter(filter)
+    }
 
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
-                ForEach(allPokemon) { pokemon in
+                ForEach(pokemonToShow) { pokemon in
                     DexCell(
                         pokemon: pokemon,
                         caught: isCaught(pokemon),
@@ -67,6 +72,9 @@ struct DexView_Previews: PreviewProvider {
     }
 
     static var previews: some View {
-        DexView(allPokemon: demoPokemon, caughtPokemon: CaughtPokemon())
+        DexView(
+            allPokemon: demoPokemon,
+            caughtPokemon: CaughtPokemon(),
+            caughtSelectionFilter: .all)
     }
 }
