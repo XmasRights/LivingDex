@@ -15,7 +15,7 @@ struct DexCell: View {
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 25)
+            RoundedRectangle(cornerRadius: 12)
                 .fill(Color("BackgroundColor"))
                 .shadow(color: Color("Shadow1"), radius: 10, x: 10, y: 10)
                 .shadow(color: Color("Shadow2"), radius: 10, x: -5, y: -5)
@@ -24,7 +24,7 @@ struct DexCell: View {
                 .onTapGesture(perform: caughtAction)
                 .onLongPressGesture(perform: inspectAction)
 
-            RoundedRectangle(cornerRadius: 25)
+            RoundedRectangle(cornerRadius: 12)
                 .stroke(borderColor, lineWidth: 4)
 
         }
