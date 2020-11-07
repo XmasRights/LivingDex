@@ -41,7 +41,9 @@ struct Header: View {
             Spacer()
 
             Text("Caught: \(caught)")
-                .padding()
+                .font(.caption)
+                .padding(.horizontal, 8)
+                .padding(.vertical, 4)
                 .background(
                     Capsule()
                         .fill(Color.green)
