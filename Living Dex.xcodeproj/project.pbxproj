@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		4B473708250D83C1001BB7D8 /* Living_DexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B473707250D83C1001BB7D8 /* Living_DexApp.swift */; };
 		4B47370C250D83C1001BB7D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B47370B250D83C1001BB7D8 /* Assets.xcassets */; };
 		4B47370F250D83C1001BB7D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B47370E250D83C1001BB7D8 /* Preview Assets.xcassets */; };
+		4B4E64062613926F00183B48 /* PokemonAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 4B4E64052613926F00183B48 /* PokemonAPI */; };
 		4B6D3E6D2516B615001B17A3 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6D3E6C2516B615001B17A3 /* Header.swift */; };
 		4B6D3E712516B85D001B17A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6D3E702516B85D001B17A3 /* ContentView.swift */; };
 		4B93CB25250D8437007A162C /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93CB24250D8437007A162C /* Pokemon.swift */; };
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B4E64062613926F00183B48 /* PokemonAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,9 +106,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		4B4E6403261391C300183B48 /* Kinofer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Kinofer;
+			sourceTree = "<group>";
+		};
 		4B6D3E662516B584001B17A3 /* Pokemon */ = {
 			isa = PBXGroup;
 			children = (
+				4B4E6403261391C300183B48 /* Kinofer */,
 				4BBF0193251682C80029AF93 /* Fanzeyi Data */,
 				4B93CB23250D841C007A162C /* Model */,
 			);
@@ -185,6 +195,9 @@
 			dependencies = (
 			);
 			name = "Living Dex";
+			packageProductDependencies = (
+				4B4E64052613926F00183B48 /* PokemonAPI */,
+			);
 			productName = "Living Dex";
 			productReference = 4B473704250D83C1001BB7D8 /* Living Dex.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +225,9 @@
 				Base,
 			);
 			mainGroup = 4B4736FB250D83C1001BB7D8;
+			packageReferences = (
+				4B4E64042613926F00183B48 /* XCRemoteSwiftPackageReference "PokemonAPI" */,
+			);
 			productRefGroup = 4B473705250D83C1001BB7D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -444,6 +460,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4B4E64042613926F00183B48 /* XCRemoteSwiftPackageReference "PokemonAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kinkofer/PokemonAPI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B4E64052613926F00183B48 /* PokemonAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B4E64042613926F00183B48 /* XCRemoteSwiftPackageReference "PokemonAPI" */;
+			productName = PokemonAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4B4736FC250D83C1001BB7D8 /* Project object */;
 }
